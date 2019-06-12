@@ -44,7 +44,8 @@ router.post("/login", (req, res) => {
 function generateToken(user) {
   const payload = {
     subject: user.id, //sub property - user id
-    username: user.username
+    username: user.username,
+    roles: ["student"]
   };
   const secret = "007";
   const options = {
